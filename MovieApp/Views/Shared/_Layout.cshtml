@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Movie App</title>
+    @await Html.PartialAsync("_LayoutCssPartial")
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <partial name="_navbar" />
+    </header> 
+    <main style="height:auto;">
+        <div class="container mt-4">
+            @RenderBody()
+        </div>
+    </main>
+    <footer style="background-color:white; height:150px; padding-top:25px;">
+        <partial name="_footer" />
+    </footer>
+</body>
+</html>

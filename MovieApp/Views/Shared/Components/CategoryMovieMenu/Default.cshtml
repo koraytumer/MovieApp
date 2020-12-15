@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CategoryMovie>
+
+<div class="list-group">
+    @foreach (var categories in Model)
+    {
+        <a asp-controller="Movie" asp-action="Index" asp-route-id="@categories.Id"
+           class="list-group-item @(ViewBag.SelectedCategory==categories.Id.ToString()?"active":"")">
+            @categories.Name
+        </a>
+    }
+</div>
+
+
+
+
+@*<product-list-pager
+                        current-category="ViewBag.CurrentCategory"
+                        current-page="ViewBag.CurrentPage"
+                        page-count="ViewBag.PageCount"
+                        page-size="ViewBag.PageSize">
+
+    </product-list-pager>*@
+
+

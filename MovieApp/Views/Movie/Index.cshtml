@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Movie>
+
+
+<div class="row">
+    <div class="col-md-3">
+        @*<partial name="_menuMovies" model="Model.Categories" />*@
+        @await Component.InvokeAsync("CategoryMovieMenu")
+    </div>
+    <div class="col-md-9">
+        <partial name="_movies" model="Model" />
+    </div>
+</div>
+
+

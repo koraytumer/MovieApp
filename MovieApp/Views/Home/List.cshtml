@@ -1,0 +1,56 @@
+﻿@model List<SearchModel>
+@{
+    ViewData["Title"] = "List";
+}
+<div class="album py-5 bg-white">
+    <div class="container">
+        <div class="row">
+            <h3 style="text-align:center"><strong>Movies & TV Series:</strong></h3><br /><br /><br />
+            <br /><br />
+            @foreach (var items in Model)
+            {
+                @if (items.Status == 1)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 450px; width: 100%; display: block;" src="~/img/@items.ImageUrl" data-holder-rendered="true">
+                            <div class="card-body">
+                                <p><strong>@items.Name</strong></p>
+                                <p class="card-text">@Html.Raw(@items.Description)</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a asp-action="Details" asp-controller="Movie" asp-route-id="@items.Id" class="btn btn-primary my-2">Details</a>
+                                    </div>
+                                    <small class="text-muted">- mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" alt="Thumbnail [100%x225]" style="height: 450px; width: 100%; display: block;" src="~/img/@items.ImageUrl" data-holder-rendered="true">
+                            <div class="card-body">
+                                <p><strong>@items.Name</strong></p>
+                                <p class="card-text">@Html.Raw(@items.Description)</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a asp-action="Details" asp-controller="Series" asp-route-id="@items.Id" class="btn btn-primary my-2">Details</a>
+                                    </div>
+                                    <small class="text-muted">- mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+

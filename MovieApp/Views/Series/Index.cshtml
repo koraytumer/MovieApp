@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Series>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-3">
+        @*<partial name="_menuMovies" model="Model.Categories" />*@
+        @*@Html.Partial("_menuSeries",Model.Categories)*@
+        @await Component.InvokeAsync("CategorySeriesMenu")
+    </div>
+    <div class="col-md-9">
+        <partial name="_series" model="Model" />
+    </div>
+</div>
+
+

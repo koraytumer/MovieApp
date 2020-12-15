@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Series>
+
+
+
+@foreach (var series in Model)
+{
+    <div class="card mb-3">
+        <div class="row no-gutter">
+            <div class="col-md-3">
+                <img src="~/img/@series.ImageUrl" alt="@series.Description" class="card-img" />
+            </div>
+            <div class="col-md-9">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align:center">
+                        <a asp-action="Details" asp-controller="Series" asp-route-id="@series.Id">
+                            @series.Name
+                        </a>
+                    </h5>
+                    <p class="card-text">
+                        @Html.Raw(@series.ShortDescription)
+                    </p>
+                    <br /><br /><br /><br />
+                    <h6 class="card-little" style="text-align: match-parent;">
+                        <strong>Director:</strong>@Html.Raw(series.Director)
+                    </h6>
+                    <h6 class="card-little">
+                        <strong>Stars:</strong>@Html.Raw(series.Stars)
+                    </h6>
+                    <p class="card-text" style="text-align:end;">
+                        <small class="text-muted">3 days ago</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+
+
+
+
+
+
+
+
